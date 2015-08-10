@@ -3,3 +3,870 @@ layout: default
 title: test title
 ---
 <p>Hello world!</p>
+
+<!DOCTYPE html>
+<!--[if IE 6]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 7]><html class="ie lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="ie ie8"><![endif]-->
+<!--[if IE 9]><html class="ie ie9"><![endif]-->
+<!--[if !IE]><!--> <html> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"1255494d3a","applicationID":"1070872","transactionName":"e1daR0JWVV9RER9ZWkxdRxxDUVZE","queueTime":0,"applicationTime":135,"agent":"js-agent.newrelic.com/nr-686.min.js"}</script>
+    <script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAUOVFNACQMHVFlVBQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=t("ee").create(),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,u=c.document;t(2);var f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-686.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="description"  content=" 摘要：这是一篇很详尽的独立博客搭建教程，里面介绍了域名注册、DNS设置、github和Hexo设置等过程，这是我写得最长的一篇教程。我想将我搭建独立博客的过程在一篇文章中尽可能详细地写出来，希望能给后来者一个明确的指引，同时用这篇教程开篇，正式开始我的第八大洲之旅。
+ 前言
+ 作为一个技...">
+    <script src="http://static.jianshu.io/assets/bugsnag-2.min-51c1171c45b549cf7bc85c76d5247a0a.js" data-apikey="5abb12613f217476dc531df54ad96676"></script>
+    <meta property="wb:webmaster" content="294ec9de89e7fadb" />
+    <meta property="qc:admins" content="104102651453316562112116375" />
+    <meta property="qc:admins" content="11635613706305617" />
+    <meta property="qc:admins" content="1163561616621163056375" />
+    <meta name="google-site-verification" content="cV4-qkUJZR6gmFeajx_UyPe47GW9vY6cnCrYtCHYNh4" />
+    <meta name="google-site-verification" content="HF7lfF8YEGs1qtCE-kPml8Z469e2RHhGajy6JPVy5XI" />
+    <meta http-equiv="mobile-agent" content="format=html5; url=http://www.jianshu.com/p/05289a4bc8b2">
+    <!--  Meta for Twitter Card -->
+    <meta content="summary" property="twitter:card">
+    <meta content="@jianshucom" property="twitter:site">
+    <meta content="如何搭建一个独立博客——简明Github Pages与Hexo教程" property="twitter:title">
+    <meta content=" 摘要：这是一篇很详尽的独立博客搭建教程，里面介绍了域名注册、DNS设置、github和Hexo设置等过程，这是我写得最长的一篇教程。我想将我搭建独立博客的过程在一篇文章中尽可能详细地写出来，希望能给后来者一个明确的指引，同时用这篇教程开篇，正式开始我的第八大洲之旅。
+ 前言
+ 作为一个技..." property="twitter:description">
+    <meta content="http://www.jianshu.com/p/05289a4bc8b2" property="twitter:url">
+
+    <!--  Meta for OpenGraph -->
+    <meta content="如何搭建一个独立博客——简明Github Pages与Hexo教程" property="og:title">
+    <meta content=" 摘要：这是一篇很详尽的独立博客搭建教程，里面介绍了域名注册、DNS设置、github和Hexo设置等过程，这是我写得最长的一篇教程。我想将我搭建独立博客的过程在一篇文章中尽可能详细地写出来，希..." property="og:description">
+    <meta content="简书" property="og:site_name">
+    <meta content="website" property="og:type">
+    <meta content="http://www.jianshu.com/p/05289a4bc8b2" property="og:url">
+
+    <title>如何搭建一个独立博客——简明Github Pages与Hexo教程 - 简书</title>
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="xA+FSPJQoYqkJWdM3BncSLifND9q4tpBxLD5u+sWq/ZmdGVmY/c0Y+nu6bmU0gub6MBUlbsTGr/d9jEMLQLD3g==" />
+    <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" media="all" href="http://static.jianshu.io/assets/base-fe80d0eec44485aaab736e28ddf309f5.css" />
+
+    <link rel="stylesheet" media="all" href="http://static.jianshu.io/assets/reading-note-372811053470954c7216ca1ef593bb10.css" />
+    <link rel="stylesheet" media="all" href="http://static.jianshu.io/assets/base-read-mode-e720cf265b3515d647208cd54b39f4bd.css" />
+    <script src="http://static.jianshu.io/assets/modernizr-1a919965e17abadafd276b9ad5c53472.js"></script>
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if IE 8]><link rel="stylesheet" media="all" href="http://static.jianshu.io/assets/scaffolding/for_ie-38b1be95d4cf922ccf54e0e49199367e.css" /><![endif]-->
+    <!--[if lt IE 9]><link rel="stylesheet" media="all" href="http://static.jianshu.io/assets/scaffolding/for_ie-38b1be95d4cf922ccf54e0e49199367e.css" /><![endif]-->
+    <link href="http://baijii-common.b0.upaiyun.com/icons/favicon.ico" rel="icon">
+    <link rel="apple-touch-icon-precomposed" href="http://static.jianshu.io/assets/icon114-2f9cb857aaba989bca6af5532bbc499b.png" />
+    <script>
+        var _czc = _czc || [];
+        _czc.push(["_setAccount", "1253183112"]);
+    </script>
+</head>
+
+<body class="post output zh cn mac reader-day-mode reader-font2" data-js-module="note-show" data-locale="zh-CN">
+
+<div class="navbar navbar-jianshu shrink">
+    <div class="dropdown">
+        <a class="dropdown-toggle logo" id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0)">
+            简
+        </a>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+            <li><a href="/"><i class="fa fa-home"></i> 首页</a></li>
+            <li><a href="/collections"><i class="fa fa-th"></i> 专题</a></li>
+            <li><a href="/user_invitations"><i class="fa fa-money"></i> 发钱啦</a></li>
+        </ul>
+    </div>
+</div>
+<div class="navbar-user">
+    <a class="login" data-signup-link="true" data-toggle="modal" href="/sign_up">
+        <i class="fa fa-user"></i> 注册
+    </a>    <a class="login" data-signin-link="true" data-toggle="modal" href="/sign_in">
+    <i class="fa fa-sign-in"></i> 登录
+</a>    <a class="daytime set-view-mode pull-right" href="javascript:void(0)"><i class="fa fa-moon-o"></i></a>
+</div>
+<div class="navbar navbar-jianshu expanded">
+    <div class="dropdown">
+        <a class="active logo" role="button" data-original-title="个人主页" data-container="div.expanded" href="/">
+            <b>简</b><i class="fa fa-home"></i><span class="title">首页</span>
+        </a>      <a data-toggle="tooltip" data-placement="right" data-original-title="专题" data-container="div.expanded" href="/collections">
+        <i class="fa fa-th"></i><span class="title">专题</span>
+    </a>    <a data-toggle="tooltip" data-placement="right" data-original-title="下载手机应用" data-container="body" href="/apps">
+        <i class="fa fa-mobile"></i><span class="title">下载手机应用</span>
+    </a>  </div>
+    <div class="nav-user">
+        <a href='#view-mode-modal' data-toggle='modal'><i class="fa fa-font"></i><span class="title">显示模式</span></a>
+
+        <a class="signin" data-signin-link="true" data-toggle="modal" data-placement="right" data-original-title="登录" data-container="div.expanded" href="/sign_in">
+            <i class="fa fa-sign-in"></i><span class="title">登录</span>
+        </a>    </div>
+</div>
+
+
+<div class="fixed-btn">
+    <a class="go-top hide-go-top" href="#"> <i class="fa fa-angle-up"></i></a>
+    <a class="qrcode" data-target="#bottom-qrcode" data-toggle="modal" href="javascript:void(0)"><i class="fa fa-qrcode"></i></a>
+    <a class="writer" href="/writer#/" data-toggle="tooltip" data-placement="left" title="写篇文章"><i class="fa fa-pencil"></i></a>
+    <!-- qrcode modal -->
+    <div id="bottom-qrcode" class="modal panel-modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <h4>下载简书移动应用</h4>
+        <div class="panel-body"><img alt="Download app qrcode" src="http://static.jianshu.io/assets/app-page/download-app-qrcode-54b80569dd46614b3507ca15811edd62.png" /></div>
+    </div>
+</div>
+
+
+<div id="show-note-container">
+
+
+<div class="post-bg" id="flag">
+<div class="wrap-btn">
+    <!-- Notebook and collections button upper left -->
+    <div class="article-related pull-left">
+        <a class="collection-menu-btn" data-toggle="modal" data-target="#collection-menu" href="javascript:void(null);">
+            <i class="fa fa-th"></i>
+        </a>          <a class="notebooks-menu-btn" data-toggle="modal" data-target="#notebooks-menu" href="javascript:void(null);"><i class="fa fa-list-ul"></i></a>
+        <div class="related-avatar-group activities"></div>
+    </div>
+    <!-- ******* -->
+
+    <a class="login" data-signup-link="true" data-toggle="modal" href="/sign_up">
+        <i class="fa fa-user"></i> 注册
+    </a>  <a class="login" data-signin-link="true" data-toggle="modal" href="/sign_in">
+    <i class="fa fa-sign-in"></i> 登录
+</a>
+
+    <!-- Buttons upper right -->
+    <!-- ******* -->
+</div>
+
+<div class="container">
+<!-- Article activities for width under 768px -->
+<div class="related-avatar-group activities"></div>
+<div class="article">
+<div class="preview">
+<div class="author-info">
+    <div class="btn btn-small btn-success follow">
+        <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-plus"></i>  <span>添加关注</span></a>
+    </div>
+
+    <a class="avatar" href="/users/c30afb47d730">
+        <img thumbnail="90x90" quality="100" src="http://upload.jianshu.io/users/upload_avatars/32598/%E7%BA%A2%E5%BF%83%E6%B5%B7%E8%B4%BC%E5%9B%A2__%E6%AD%A3.jpg?imageMogr/thumbnail/90x90/quality/100" alt="%e7%ba%a2%e5%bf%83%e6%b5%b7%e8%b4%bc%e5%9b%a2  %e6%ad%a3" />
+    </a>            <span class="label">作者</span>
+    <a class="author-name blue-link" href="/users/c30afb47d730">
+        <span>CnFeat</span>
+    </a>              <span data-toggle='tooltip' data-original-title='最后编辑于 2014.08.06 04:05'>2014.05.11 18:59*</span>
+    <div>
+        <span>写了484555字</span>，<span>被2050人关注</span>，<span>获得了9204个喜欢</span>
+    </div>
+</div>
+<h1 class="title">如何搭建一个独立博客——简明Github Pages与Hexo教程</h1>
+<div class="meta-top">
+    <span class="wordage"></span>
+    <span class="views-count"></span>
+    <span class="comments-count"></span>
+    <span class="likes-count"></span>
+</div>
+
+<!-- Collection/Bookmark/Share for width under 768px -->
+<div class="article-share"></div>
+<!-- -->
+
+<div class="show-content"><p>摘要：这是一篇很详尽的独立博客搭建教程，里面介绍了域名注册、DNS设置、github和Hexo设置等过程，这是我写得最长的一篇教程。我想将我搭建独立博客的过程在一篇文章中尽可能详细地写出来，希望能给后来者一个明确的指引，同时用这篇教程开篇，正式开始我的第八大洲之旅。</p>
+<h2>前言</h2>
+<p>作为一个技术小白，没有技术基础，看网上的教程也云里雾里，看程序员的教程相当不容易，稍微有些细节描述得不清楚自己就要绕弯路去找答案（善用搜索引擎），所以，在自己的博客搭建完成之后，我决定要将我搭建博客的过程全记录下来，以供后期和我一样的小白参考（是的，我坚信还有很多一样和我一样的人），我会尽可能详细的整理这个教程，其中的资料可能会摘录到其他人的教程，我会在后面列出了参考资料，感谢这些作者们。</p>
+<p>为什么要开博客？可以看看我的这篇<a href="http://zhuanlan.zhihu.com/cnfeat/19743861" target="_blank" rel="nofollow">《为什么你要写博客？》</a></p>
+<p>也可以看看这篇<a href="http://zhuanlan.zhihu.com/cnfeat/19743255" target="_blank" rel="nofollow">《我的博客时代》</a></p>
+<p>以下以我的博客:www.cnfeat.com为例，教大家如何搭建一个独立博客。</p>
+<h2>为什么要搭建一个独立博客?</h2>
+<p>独立的才是自己的。</p>
+<h2>小白进入门槛</h2>
+<ul>
+    <li>1、非常折腾，需要耐心；</li>
+    <li>2、也需要一定的学习能力和钻研精神；</li>
+    <li>3、懂一些网页基础知识，不懂也重要，参看第二和第三条；</li>
+</ul>
+<h2>小白白请看</h2>
+<p>2014年5月15日更新：发现一个更简单的方法：<a href="http://isnowfy.github.io/about-simple-cn.html" target="_blank" rel="nofollow">用静态页面生成静态博客</a> byisnowfy</p>
+<p>按此教程操作即可。</p>
+<h2>为什么选择GitHub Pages？</h2>
+<p>很多人用wordpress，你为什么要用github pages来搭建？</p>
+<ul>
+    <li>1、github pages有300M免费空间，资料自己管理，保存可靠；</li>
+    <li>2、学着用github，享受github的便利，上面有很多大牛，眼界会开阔很多；</li>
+    <li>3、顺便看看github工作原理，最好的团队协作流程；</li>
+    <li>4、github是趋势；</li>
+    <li>5、你不觉得一个文科生用github很geek吗？瞬间跻身技术界；</li>
+    <li>6、就算github被墙了，我可以搬到国内的gitcafe中去。</li>
+</ul>
+<p><img src="http://cnfeat.qiniudn.com/bg2012082502.jpg" alt=""></p>
+<h2>GitHub Pages是什么？</h2>
+<p>GitHub Pages本用于介绍托管在GitHub的项目， 不过，由于他的空间免费稳定，用来做搭建一个博客再好不过了。</p>
+<blockquote>
+    <p>github Pages可以被认为是用户编写的、托管在github上的静态网页。</p>
+</blockquote>
+<p><img src="http://cnfeat.qiniudn.com/1.png" alt=""></p>
+<h2>购买域名</h2>
+<p>只推荐上godaddy购买，安全，而且可以使用支付宝。</p>
+<p>教程（截止至2014年5月10日）如下</p>
+<p><strong>1、查你想要的域名</strong>；</p>
+<p><img src="http://cnfeat.qiniudn.com/2.png" alt=""></p>
+<p><strong>2、查到适合的域名之后选择「continue to Cart」</strong>；</p>
+<p><img src="http://cnfeat.qiniudn.com/3.png" alt=""></p>
+<p><strong>3、godaddy附加收费服务，不要管，继续「continue to Cart」</strong>；</p>
+<p><img src="http://cnfeat.qiniudn.com/4.png" alt=""></p>
+<p><strong>4、确认购买。</strong>修改购买年限，默认是两年，可以修改成1/2/3/5/10年，随自己喜欢。现在godaddy上com每年的默认费用是12.99美元，附加上ICANN的管理费用就是13.17美元。</p>
+<p><img src="http://cnfeat.qiniudn.com/5.png" alt=""></p>
+<p>如果你不是土豪，可以上网搜godaddy的优惠码，一大堆，找一个填进这里，填完之后，一年的费用会变成8.99美元。</p>
+<p><img src="http://cnfeat.qiniudn.com/61.png" alt=""></p>
+<p><strong>说明一下</strong>：一般来讲，使用网上的优惠码第一年收费8.99美元，以后每年的收费是10.99美元，不过在网上可以搜到合适的优惠码，可以每年的收费都是8.99美元，记得多测试自行鉴别。</p>
+<p>如图，我买了五年的费用就是45.85美元，随后点击「Proceed to Checkout」</p>
+<p><img src="http://cnfeat.qiniudn.com/6.png" alt=""></p>
+<p><strong>5、结算。</strong>登录或注册界面，填完必要的信息之后，选择用支付宝结算。</p>
+<p><img src="http://cnfeat.qiniudn.com/7.png" alt=""></p>
+<p>如果以上的教程如果不够清晰，可以参照这一份<a href="http://www.admin5.com/article/20131014/527495.shtml" target="_blank" rel="nofollow">《2013年10月新版godaddy域名注册图文教程》</a>。</p>
+<p><strong>6、检查。</strong>结算后，重新登录，去「My Account」，域名已经显示在你的账户了。</p>
+<p><img src="http://cnfeat.qiniudn.com/8.png" alt=""></p>
+<p><strong>7、补充一些注意事项：</strong></p>
+<ul>
+    <li>输入优惠码没有优惠或者优惠幅度较低，请清除浏览器cookies再尝试；</li>
+    <li>如果没有支付宝支付选项，有可能是使用的优惠码不支持支付宝，请重新清除浏览器cookies再尝试；</li>
+    <li>注册时用户填写信息时一定要输入正确的邮箱名字，否则修改十分麻烦。</li>
+    <li>买完域名之后一定要记得去自己的邮箱查看激活邮件，否则域名激活不了。</li>
+</ul>
+<h2>安装准备软件</h2>
+<p>依次下载安装。</p>
+<ul>
+    <li>1、<a href="http://nodejs.org/" target="_blank" rel="nofollow">Node.js</a>
+    </li>
+    <li>2、<a href="http://git-scm.com/" target="_blank" rel="nofollow">Git</a>
+    </li>
+</ul>
+<h2>怎么打开Git？</h2>
+<ul>
+    <li>1、开始菜单Git Bash。</li>
+    <li>
+    </li>
+    <li><img src="http://cnfeat.qiniudn.com/9.jpg" alt=""></li>
+    <li>
+    </li>
+    <li>2、鼠标右键打开Git Bash。</li>
+    <li><img src="http://cnfeat.qiniudn.com/s10.jpg" alt=""></li>
+</ul>
+<h2>注册GitHub</h2>
+<p>访问：<a href="http://www.github.com/" target="_blank" rel="nofollow">http://www.github.com/</a> </p>
+<p>注册你的username和邮箱，邮箱十分重要，GitHub上很多通知都是通过邮箱的。</p>
+<p>注册过程比较简单，详细也可以看：</p>
+<p><a href="http://pchou.info/web-build/2013/01/03/build-github-blog-page-01.html" target="_blank" rel="nofollow">一步步在GitHub上创建博客主页 全系列</a> by pchou（推荐）</p>
+<h2>配置和使用Github</h2>
+<p>以下教程主要参考beiyuu的<a href="http://beiyuu.com/github-pages/" target="_blank" rel="nofollow">《使用Github Pages建独立博客》</a>写成。</p>
+<h2>配置SSH keys</h2>
+<p>我们如何让本地git项目与远程的github建立联系呢？用SSH keys。</p>
+<h3>检查SSH keys的设置</h3>
+<p>首先我们需要检查你电脑上现有的ssh key：</p>
+<pre><code>$ cd ~/. ssh 检查本机的ssh密钥</code></pre>
+<p>如果提示：No such file or directory 说明你是第一次使用git。</p>
+<h3>生成新的SSH Key：</h3>
+<pre><code>$ ssh-keygen -t rsa -C "邮件地址@youremail.com"
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</code></pre>
+<p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」</p>
+<p>然后系统会要你输入密码：</p>
+<pre><code>Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;
+    Enter same passphrase again:&lt;再次输入加密串&gt;</code></pre>
+<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
+<p>注意：输入密码的时候没有*字样的，你直接输入就可以了。</p>
+<p>最后看到这样的界面，就成功设置ssh key了：</p>
+<p><img src="http://cnfeat.qiniudn.com/11.png" alt=""></p>
+<h3>添加SSH Key到GitHub</h3>
+<p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
+<ul>
+    <li>
+        <p>1、打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
+    </li>
+    <li>
+        <p>2、登陆github系统。点击右上角的 Account Settings---&gt;SSH Public keys ---&gt; add another public keys</p>
+    </li>
+    <li>
+        <p>3、把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</p>
+    </li>
+</ul>
+<p><img src="http://cnfeat.qiniudn.com/s12.jpg" alt=""></p>
+<h3>测试</h3>
+<p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
+<pre><code>$ ssh -T git@github.com</code></pre>
+<p>如果是下面的反馈：</p>
+<pre><code>The authenticity of host 'github.com (207.97.227.239)' can't be established.
+    RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+    Are you sure you want to continue connecting (yes/no)?</code></pre>
+<p>不要紧张，输入yes就好，然后会看到：</p>
+<pre><code>Hi cnfeat! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+<h3>设置用户信息</h3>
+<p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</p>
+<p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
+<pre><code>$ git config --global user.name "cnfeat"//用户名
+    $ git config --global user.email  "cnfeat@gmail.com"//填写自己的邮箱</code></pre>
+<h3>SSH Key配置成功</h3>
+<p>本机已成功连接到github。</p>
+<p>若有问题，请重新设置。常见错误请参考：</p>
+<p><a href="http://help.github.com/articles/generating-ssh-keys" target="_blank" rel="nofollow">GitHub Help - Generating SSH Keys</a></p>
+<p><a href="http://help.github.com/articles/error-permission-denied-publickey" target="_blank" rel="nofollow">GitHub Help - Error Permission denied (publickey)</a></p>
+<h2>使用GitHub Pages建立博客</h2>
+<p>与GitHub建立好链接之后，就可以方便的使用它提供的Pages服务，GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。</p>
+<p>想建立个人博客是用的第一种，形如cnfeat.github.io这样的可访问的站，每个用户名下面只能建立一个。</p>
+<h3>github上建立仓库</h3>
+<p>登录后系统，在github首页，点击页面右下角「New Repository」</p>
+<p><img src="http://cnfeat.qiniudn.com/13.png" alt=""></p>
+<p>填写项目信息：</p>
+<p><strong>project name：</strong>cnfeat.github.io  </p>
+<p><strong>description：</strong> Writing 1000 Words a Day Changed My Life</p>
+<p>注：Github Pages的Repository名字是特定的，比如我Github账号是cnfeat，那么我Github Pages Repository名字就是cnfeat.github.io。</p>
+<p><img src="http://cnfeat.qiniudn.com/14.png" alt=""></p>
+<p>点击「Create Repository」 完成创建。</p>
+<p>详细可以看这里：<a href="http://pchou.info/web-build/2013/01/05/build-github-blog-page-02.html" target="_blank" rel="nofollow">一步步在GitHub上创建博客主页(2)</a></p>
+<h2>用Hexo克隆主题</h2>
+<h3>Hexo介绍</h3>
+<p>Hexo的作者是<a href="https://github.com/tommy351/hexo" target="_blank" rel="nofollow">tommy351</a>，根据<a href="http://hexo.io/docs/index.html" target="_blank" rel="nofollow">官方介绍</a>，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。</p>
+<h3>安装Hexo</h3>
+<p>打开git。</p>
+<pre><code>$ npm install -g hexo</code></pre>
+<h3>部署Hexo</h3>
+<p>在我的电脑中建立一个名字叫「Hexo」的文件夹，然后在此文件夹中右键打开Git Bash。</p>
+<pre><code>$ hexo init</code></pre>
+<p>Hexo随后会自动在目标文件夹建立网站所需要的所有文件。</p>
+<p>现在我们已经搭建起本地的hexo博客了，执行以下命令(在H:\hexo)，然后到浏览器输入localhost:4000看看。</p>
+<pre><code>$ hexo g
+    $ hexo s</code></pre>
+<h3>复制cnfeat的主题</h3>
+<p>以下进入复制主题环节，如果那一步出现问题，或者修改后没有显示修改的结果，建议来来一个，再看看，可以解决很多问题。</p>
+<pre><code>$ hexo clean
+    $ hexo g
+    $ hexo s</code></pre>
+<p>建立了Hexo文件之后就可以复制我的主题了</p>
+<pre><code>$ git clone https://github.com/cnfeat/cnfeat.git themes/jacman</code></pre>
+<p>如果不行，可以复制wuchong的修改的主题，我的就是复制他的修改的。</p>
+<pre><code>$ git clone https://github.com/wuchong/jacman.git themes/jacman</code></pre>
+<p>或者复制yangjian的</p>
+<pre><code>$ git clone https://github.com/A-limon/pacman.git themes/pacman</code></pre>
+<h3>启用cnfeat的主题</h3>
+<p>修改Hexo目录下的config.yml配置文件中的theme属性，将其设置为jacman。同时请设置stylus属性中的compress值为true。</p>
+<pre><code>theme: jacman</code></pre>
+<p>注意：Hexo有两个config.yml文件，一个在根目录，一个在theme下，此时修改的是在根目录下的。</p>
+<h3>更新主题</h3>
+<pre><code>$ cd themes/jacman
+    $ git pull</code></pre>
+<p>注意：为避免出错，请先备份你的_config.yml 文件后再升级</p>
+<h3>本地查看调试</h3>
+<pre><code>$ hexo g #生成
+    $ hexo s #启动本地服务，进行文章预览调试</code></pre>
+<p>或者直接作用组合命令</p>
+<pre><code>$ hexo d -g</code></pre>
+<p>浏览器输入<a href="http://localhost:4000%EF%BC%8C%E6%9F%A5%E7%9C%8B%E6%90%AD%E5%BB%BA%E6%95%88%E6%9E%9C%E3%80%82%E6%AD%A4%E5%90%8E%E7%9A%84%E6%AF%8F%E6%AC%A1%E5%8F%98%E6%9B%B4_config.yml" target="_blank" rel="nofollow">http://localhost:4000，查看搭建效果。此后的每次变更_config.yml</a> 文件或者上传文件都可以先用此命令调试，非常好用，尤其是当你想调试出自己想要的主题时。</p>
+<h2>将独立域名与GitHub Pages的空间绑定</h2>
+<h3>GitHub Pages的设置</h3>
+<p>方法一：在Repository的根目录下面，新建一个名为CNAME的文本文件，里面写入你要绑定的域名，比如cnfeat.com。</p>
+<p>方法二：到我的github仓库，点击右下角的「Download ZIP」，下载源文件，解压，找到CNAME文件，用记事本打开，将cnfeat.com修改成你的域名，放进Hexo\source目录下，用hexo命令提交上去。</p>
+<pre><code>$ hexo d -g</code></pre>
+<h3>DNS设置</h3>
+<p>用DNSpod，快，免费，稳定。</p>
+<p>注册<a href="www.dnspod.cn" target="_blank" rel="nofollow">DNSpod</a>，添加域名，如下图设置。</p>
+<p><img src="http://cnfeat.qiniudn.com/15.png" alt=""></p>
+<p>其中A的两条记录指向的ip地址是github Pages的提供的ip</p>
+<ul>
+    <li>192.30.252.153</li>
+    <li>192.30.252.154</li>
+</ul>
+<p>如博客不能登录，有可能是github更改了空间服务的ip地址，记得及时到在<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages" target="_blank" rel="nofollow">GitHub Pages</a>查看最新的ip即可</p>
+<p>www指定的记录是你在github注册的仓库。</p>
+<h3>去Godaddy修改DNS地址</h3>
+<p>更改godaddy的Nameservers为DNSpod的NameServers。</p>
+<p><img src="http://cnfeat.qiniudn.com/16.png" alt=""></p>
+<p>1、点击「My Account」，管理我的域名。</p>
+<p><img src="http://cnfeat.qiniudn.com/17.jpg" alt=""></p>
+<p>2、点击域名。</p>
+<p><img src="http://cnfeat.qiniudn.com/18.jpg" alt=""></p>
+<p>3、将godaddy的Nameservers更改成f1g1ns1.dnspod.net和f1g1ns2.dnspod.net</p>
+<p><img src="http://cnfeat.qiniudn.com/19.jpg" alt=""></p>
+<p>如有不详看可以看<a href="https://support.dnspod.cn/Kb/showarticle/tsid/42/" target="_blank" rel="nofollow">DNSpod提供的官方帮助</a></p>
+<p>详细也可以看这里：<a href="http://pchou.info/web-build/2013/01/05/build-github-blog-page-03.html" target="_blank" rel="nofollow">一步步在GitHub上创建博客主页(3)</a></p>
+<h2>搭建完成</h2>
+<p>至此，独立博客就算搭建完成，如需进步一完善请在参看以下文章或博客下留言。</p>
+<p><a href="http://yangjian.me/workspace/introducing-pacman-theme/" target="_blank" rel="nofollow">Pacman主题介绍</a> by yangjian</p>
+<p><a href="http://yangjian.me/workspace/building-blog-with-hexo/" target="_blank" rel="nofollow">使用hexo搭建博客</a> by yangjian</p>
+<p><a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="nofollow">hexo系列教程：（二）搭建hexo博客</a> by zippera（推荐）</p>
+<p><a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="nofollow">hexo系列教程：（三）hexo博客的配置、使用</a>by zippera（推荐）</p>
+<h2>进阶篇：Hexo设置</h2>
+<p>网站搭建完成后，就可以根据自己爱好来对Hexo生成的网站进行设置了，对整站的设置，只要修改项目目录的_config.yml就可以了，这是我的设置，可供参考。</p>
+<pre><code># Hexo Configuration
+    ## Docs: http://hexo.io/docs/configuration.html
+    ## Source: https://github.com/tommy351/hexo/
+
+    # Site #整站的基本信息
+    title: 1000 words a Day #网站标题
+    subtitle: Writing 1000 Words a Day Changes My Life #网站副标题
+    description: 学习总结 思考感悟 知识管理 #网站描述
+    author:  cnFeat #网站作者，在下方显示
+    email: cnFeat@gmail.com #联系邮箱
+    language: zh-CN
+
+    # URL
+    ## If your site is put in a subdirectory
+    url: http://www.cnfeat.com #你的域名
+    root: /
+    permalink: :year/:month/:day/:title/
+    tag_dir: tags
+    archive_dir: archives
+    category_dir: categories
+    code_dir: downloads/code
+
+    # Directory
+    source_dir: source
+    public_dir: public
+
+    # Writing
+    new_post_name: :title.md # File name of new posts
+    default_layout: post
+    auto_spacing: false # Add spaces between asian characters and western characters
+    titlecase: false # Transform title into titlecase
+    external_link: true # Open external links in new tab
+    max_open_file: 100
+    multi_thread: true
+    filename_case: 0
+    render_drafts: false
+    post_asset_folder: false
+    highlight:
+    enable: true
+    line_number: true
+    tab_replace:
+
+    # Category &amp; Tag
+    default_category: uncategorized
+    category_map:
+    tag_map:
+
+    # Archives
+    ## 2: Enable pagination
+    ## 1: Disable pagination
+    ## 0: Fully Disable
+    archive: 2
+    category: 2
+    tag: 2
+
+    # Server
+    ## Hexo uses Connect as a server
+    ## You can customize the logger format as defined in
+    ## http://www.senchalabs.org/connect/logger.html
+    port: 4000
+    server_ip: 0.0.0.0
+    logger: false
+    logger_format:
+
+    # Date / Time format
+    ## Hexo uses Moment.js to parse and display date
+    ## You can customize the date format as defined in
+    ## http://momentjs.com/docs/#/displaying/format/
+    date_format: YYYY-MM-DD
+    time_format: H:mm:ss
+
+    # Pagination
+    ## Set per_page to 0 to disable pagination
+    per_page: 15 #每页15篇文章
+    pagination_dir: page
+
+    # Disqus #社会化评论disqus，我使用多说，在主题中配置
+    disqus_shortname:
+
+    # Extensions
+    ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
+    ## Themes: https://github.com/tommy351/hexo/wiki/Themes
+    theme: jacman
+    exclude_generator:
+    Plugins:
+    - hexo-generator-feed
+    - hexo-generator-sitemap
+
+    #sitemap
+    sitemap:
+    path: sitemap.xml
+
+    #Feed Atom
+    feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+
+    # Markdown
+    ## https://github.com/chjj/marked
+    markdown:
+    gfm: true
+    pedantic: false
+    sanitize: false
+    tables: true
+    breaks: true
+    smartLists: true
+    smartypants: true
+
+    # Stylus
+    stylus:
+    compress: false
+
+    # Deployment
+    ## Docs: http://hexo.io/docs/deployment.html
+    deploy:
+    type: github
+    repository: https://github.com/cnfeat/cnfeat.github.io.git
+    branch: master        </code></pre>
+<h3>修改局部页面</h3>
+<p>页面展现的全部逻辑都在每个主题中控制，源代码在hexo\themes\jacman\中：</p>
+<pre><code>.
+    ├── languages  #多语言
+    |   ├── default.yml#默认语言
+    |   └── zh-CN.yml  #中文语言
+    ├── layout #布局，根目录下的*.ejs文件是对主页，分页，存档等的控制
+    |   ├── _partial   #局部的布局，此目录下的*.ejs是对头尾等局部的控制
+    |   └── _widget#小挂件的布局，页面下方小挂件的控制
+    ├── source #源码
+    |   ├── css#css源码
+    |   |   ├── _base  #*.styl基础css
+    |   |   ├── _partial   #*.styl局部css
+    |   |   ├── fonts  #字体
+    |   |   ├── images #图片
+    |   |   └── style.styl #*.styl引入需要的css源码
+    |   ├── fancybox   #fancybox效果源码
+    |   └── js #javascript源代码
+    ├── _config.yml#主题配置文件
+    └── README.md  #用GitHub的都知道</code></pre>
+<h3>发表新文章</h3>
+<p>用hexo发表新文章</p>
+<pre><code>$ hexo n #写文章 </code></pre>
+<p>其中my new post为文章标题，执行命令后，会在项目\source_posts中生成my new post.md文件，用编辑器打开编写即可。</p>
+<p>当然，也可以直接在\source_posts中新建一个md文件，我就是这么做的。</p>
+<p>写完后，推送到服务器上，执行</p>
+<pre><code>$ hexo g #生成
+    $ hexo d #部署 # 可与hexo g合并为 hexo d -g</code></pre>
+<h3>用Hexo发表文章的Markdown语法</h3>
+<p>使用jacman或pacman主题，建议按此标准语法写：</p>
+<pre><code>title: postName #文章页面上的显示名称，可以任意修改，不会出现在URL中
+    date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改
+    categories: example #分类
+    tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格
+    description: 附加一段文章摘要，字数最好在140字以内。
+    ---
+
+    以下正文</code></pre>
+<h3>为什么我的博客有目录？</h3>
+<p>我用的是Markdown语法，Markdown语法怎么用？</p>
+<p>请看这里：<a href="http://jianshu.io/p/q81RER" target="_blank" rel="nofollow">献给写作者的 Markdown 新手指南</a></p>
+<p>或者看这里：<a href="https://www.google.com.hk/#hl=zh-CN&amp;q=site:jianshu.io+Markdown" target="_blank" rel="nofollow">Markdown</a></p>
+<h3>Hexo命令</h3>
+<p>常用命令：</p>
+<pre><code>hexo new "postName" #新建文章
+    hexo new page "pageName" #新建页面
+    hexo generate #生成静态页面至public目录
+    hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭server）
+    hexo deploy #将.deploy目录部署到GitHub</code></pre>
+<p>常用复合命令：</p>
+<pre><code>hexo d -g #生成加部署
+    hexo s -g #预览加部署</code></pre>
+<p>简写：</p>
+<pre><code>hexo n == hexo new
+    hexo g == hexo generate
+    hexo s == hexo server
+    hexo d == hexo deploy</code></pre>
+<h2>安装插件</h2>
+<p>添加sitemap和feed插件</p>
+<pre><code>$ npm install hexo-generator-sitemap
+    $ npm install hexo-generator-feed</code></pre>
+<p>修改_config.yml，增加以下内容</p>
+<pre><code># Extensions
+    Plugins:
+    - hexo-generator-feed
+    - hexo-generator-sitemap
+
+    #Feed Atom
+    feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+
+    #sitemap
+    sitemap:
+    path: sitemap.xml</code></pre>
+<h2>Hexo上传README文件</h2>
+<p>Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？</p>
+<p>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。</p>
+<h2>404页面</h2>
+<p>GitHub Pages有提供制作404页面的指引：<a href="https://help.github.com/articles/custom-404-pages" target="_blank" rel="nofollow">Custom 404 Pages</a>。</p>
+<p>直接在根目录下创建自己的404.html或者404.md就可以。但是自定义404页面仅对绑定顶级域名的项目才起作用，GitHub默认分配的二级域名是不起作用的，使用hexo server在本机调试也是不起作用的。</p>
+<p>推荐使用<a href="http://www.qq.com/404" target="_blank" rel="nofollow">腾讯公益404</a>。</p>
+<h2>图床</h2>
+<p>推荐使用七牛（10G空间，免费），还可以使用Yupoo（100m免费空间）</p>
+<h2>参考资料：</h2>
+<p>[1]<a href="http://pchou.info/web-build/2013/01/03/build-github-blog-page-01.html" target="_blank" rel="nofollow">一步步在GitHub上创建博客主页 全系列</a> by pchou（推荐）</p>
+<p>[2]网站优化：<a href="http://pchou.info/web-build/2013/01/09/build-github-blog-page-06.html" target="_blank" rel="nofollow">一步步在GitHub上创建博客主页(6)</a> by pchou （推荐）</p>
+<p>[3]<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="nofollow">搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门</a> by 阮一峰（推荐）</p>
+<p>[4]<a href="http://zipperary.com/2013/05/28/hexo-guide-2/" target="_blank" rel="nofollow">hexo系列教程：（二）搭建hexo博客</a> by zippera（推荐）</p>
+<p>[5]<a href="http://zipperary.com/2013/05/29/hexo-guide-3/" target="_blank" rel="nofollow">hexo系列教程：（三）hexo博客的配置、使用</a>by zippera（推荐）</p>
+<p>[6]<a href="http://zipperary.com/2013/05/30/hexo-guide-4/" target="_blank" rel="nofollow">hexo系列教程：（四）hexo博客的优化技巧</a> by zippera（推荐）</p>
+<p>[7]<a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="nofollow">hexo你的博客</a> by ibruce（推荐） </p>
+<p>[8]<a href="http://yangjian.me/workspace/introducing-pacman-theme/" target="_blank" rel="nofollow">Pacman主题介绍</a> by yangjian（推荐）</p>
+<p>[9]<a href="http://yangjian.me/workspace/building-blog-with-hexo/" target="_blank" rel="nofollow">使用hexo搭建博客</a> by yangjian（推荐）</p>
+<p>[10]<a href="http://wuchong.me/blog/2014/01/24/change-to-pacman/" target="_blank" rel="nofollow">折腾了个Pacman主题</a> by wuchong（推荐）</p>
+<p>[11]hexo官方写作教程<a href="http://hexo.io/docs/writing.html" target="_blank" rel="nofollow">「Writing」</a></p>
+<p>[12]知乎上的教程：<a href="http://www.zhihu.com/question/20463581" target="_blank" rel="nofollow">如何搭建个人独立博客？</a></p>
+<p>[13]在GitHub Pages设置独立域名的官方教程：<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages" target="_blank" rel="nofollow">[Setting up a custom domain with GitHub Pages]</a></p>
+<p>[14]<a href="http://beiyuu.com/github-pages/" target="_blank" rel="nofollow">使用Github Pages建独立博客</a> by beiyuu</p>
+<p>[15]<a href="http://www.cnblogs.com/fnng/archive/2012/01/07/2315685.html" target="_blank" rel="nofollow">git/github初级运用自如</a> by 虫师</p>
+<p>[16]<a href="http://code.wileam.com/build-a-hexo-blog-and-optimize/" target="_blank" rel="nofollow">hexo搭建静态博客以及优化</a> by Joanna Wu</p>
+<p>[17]<a href="http://c4fun.cn/blog/2014/03/03/use-hexo-blog/" target="_blank" rel="nofollow">使用Hexo搭建个人博客</a> by c4fun</p>
+<p>[18]<a href="http://kescoode.com/2013/11/17/github-page-and-hexo-guide/" target="_blank" rel="nofollow">Github Pages与Hexo建个人博客流程</a> by Kesco</p>
+<p>[19]<a href="http://zipperary.com/2013/05/26/ssh-errors-with-github/" target="_blank" rel="nofollow">Git push时重复输入用户名密码的问题</a> by zippera</p>
+<p>[20]<a href="http://www.solarck.com/" target="_blank" rel="nofollow">hexo文件结构及网站优化</a> by kevin chen</p>
+<h2>相关链接</h2>
+<p>[1]<a href="https://pages.github.com/" target="_blank" rel="nofollow">GitHub Pages主页</a></p>
+<p>[2]<a href="http://www.godaddy.com/" target="_blank" rel="nofollow">godaddy域名商</a></p>
+<p>[3]<a href="www.dnspod.cn" target="_blank" rel="nofollow">DNSPOD</a></p>
+<p>[4]<a href="http://hexo.io/" target="_blank" rel="nofollow">Hexo官方主页</a></p>
+<p>[5]<a href="http://www.worldhello.net/gotgithub/index.html" target="_blank" rel="nofollow">GotGitHub：GitHub介绍</a>（推荐）</p>
+<p>[5]<a href="http://www.faviconer.com/" target="_blank" rel="nofollow">图标制作网站：faviconer</a></p>
+<p>[6]本地测试页<a href="http://localhost:4000/" target="_blank" rel="nofollow">localhost:4000</a></p>
+<h2>鸣谢</h2>
+<p><a href="http://wuchong.me/" target="_blank" rel="nofollow">wuchong</a></p>
+<p><a href="http://yangjian.me" target="_blank" rel="nofollow">yangjian</a></p>
+<p>Van Cheng</p>
+<h2><a href="http://cnfeat.com/about/" target="_blank" rel="nofollow">关于我</a></h2>
+<p>这里有我的个人简介：<a href="http://cnfeat.com/about/" target="_blank" rel="nofollow">关于我</a></p>
+<p>如果你想看到我最新的文章，可以关注我的微信公众号「cnfeat」。</p>
+<p><img src="http://cnfeat.qiniudn.com/1000.png" alt=""></p>
+</div>
+</div>
+</div>
+
+<div class="visitor_edit">
+    <!-- further readings -->
+    <div id="further-readings" data-user-slug="" data-user-nickname="">
+        <div id="further-reading-line" class="hide further-reading-line"></div>
+        <ul id="further-readings-list" class="reading-list unstyled"></ul>
+        <div id="further-reading-new" class="reading-edit">
+            <a data-signin-link="true" data-toggle="modal" href="/sign_in">
+                <i class="fa fa-plus-circle"></i> 推荐拓展阅读
+            </a>            <div id="further-reading-form"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Reward / Support Author -->
+
+<!-- article meta bottom -->
+<div class="meta-bottom clearfix">
+    <!--  Like Button -->
+    <div class="like ">
+        <div class="like-button">
+            <a id="like-note" class="like-content" data-signin-link="true" data-toggle="modal" href="/sign_in">
+                <i class="fa fa-heart-o"></i>  喜欢
+            </a></div>          <span id="likes-count" data-toggle="tooltip" data-placement="right" title="查看所有喜欢的用户">
+            <i class="fa fa-spinner fa-pulse"></i>
+</span>        </div>
+    <!--  share group -->
+    <div class="share-group pull-right">
+        <a href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=1881139527&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp;title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp;content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a(){if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;,[&#39;toolbar=0,status=0,resizable=1,width=440,height=430,left=&#39;,(s.width-440)/2,&#39;,top=&#39;,(s.height-430)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,&#39;http://cwb.assets.jianshu.io/notes/images/154777/weibo/image_63b6332a671f.jpeg&#39;, &#39;推荐 @Feat 的文章《如何搭建一个独立博客——简明Github Pages与Hexo教程》（ 分享自 @简书 ）&#39;,&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;,&#39;页面编码gb2312|utf-8默认gb2312&#39;));" data-name="weibo">
+            <i class="fa fa-weibo"></i><span>分享到微博</span>
+        </a>
+        <a data-toggle="modal" href="#share-weixin-modal" data-name="weixin">
+            <i class="fa fa-weixin"></i><span>分享到微信</span>
+        </a>
+        <div class="more">
+            <a href="javascript:void(0)" data-toggle="dropdown">更多分享<i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown-menu arrow-top">
+                <li><a href="http://cwb.assets.jianshu.io/notes/images/154777/weibo/image_63b6332a671f.jpeg" target="_blank" data-name="changweibo"><i class="fa fa-arrow-circle-o-down"></i> 下载长微博图片</a></li>
+                <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://share.v.t.qq.com/index.php?c=share&amp;a=index&amp;url=&#39;+e(&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 CnFeat 的文章《如何搭建一个独立博客——简明Github Pages与Hexo教程》（ 分享自 @jianshuio ）&#39;),x=function(){if(!window.open(r,&#39;tweibo&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();" data-name="tweibo"><img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/tweibo.png">分享到腾讯微博</a></li>
+                <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&#39;+e(&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;)+&#39;&amp;title=&#39;+e(&#39;推荐 CnFeat 的文章《如何搭建一个独立博客——简明Github Pages与Hexo教程》&#39;),x=function(){if(!window.open(r,&#39;qzone&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();" data-name="qzone"><img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/qzone.png">分享到QQ空间</a></li>
+                <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://twitter.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;)+&#39;&amp;text=&#39;+e(&#39;推荐 CnFeat 的文章《如何搭建一个独立博客——简明Github Pages与Hexo教程》（ 分享自 @jianshucom ）&#39;)+&#39;&amp;related=&#39;+e(&#39;jianshucom&#39;),x=function(){if(!window.open(r,&#39;twitter&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();" data-name="twitter"><img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/twitter.png">分享到Twitter</a></li>
+                <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://www.facebook.com/sharer.php?s=100&amp;p[url]=&#39;+e(&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;)+&#39;&amp;p[title]=&#39;+e(&#39;如何搭建一个独立博客——简明Github Pages与Hexo教程 - 简书社&#39;)+&#39;&amp;p[summary]=&#39;+e(&#39;推荐 CnFeat 的文章《如何搭建一个独立博客——简明Github Pages与Hexo教程》&#39;),x=function(){if(!window.open(r,&#39;facebook&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();" data-name="facebook"><img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/facebook.png">分享到Facebook</a></li>
+                <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;https://plus.google.com/share?url=&#39;+e(&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;),x=function(){if(!window.open(r,&#39;google_plus&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();" data-name="google_plus"><img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/google_plus.png">分享到Google+</a></li>
+                <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,r=&#39;http://widget.renren.com/dialog/share?resourceUrl=&#39;+e(&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;)+&#39;&amp;description=&#39;+e(&#39;推荐 CnFeat 的文章《如何搭建一个独立博客——简明Github Pages与Hexo教程》&#39;)+&#39;&amp;title=&#39;+e(&#39;如何搭建一个独立博客——简明Github Pages与Hexo教程&#39;),x=function(){if(!window.open(r,&#39;renren&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=600,height=600&#39;))location.href=r};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})();" data-name="renren"><img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/renren.png">分享到人人网</a></li>
+                <li><a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:&#39;&#39;,r=&#39;http://www.douban.com/recommend/?url=&#39;+e(&#39;http://www.jianshu.com/p/05289a4bc8b2&#39;)+&#39;&amp;title=&#39;+e(&#39;如何搭建一个独立博客——简明Github Pages与Hexo教程&#39;)+&#39;&amp;sel=&#39;+e(s)+&#39;&amp;v=1&#39;,x=function(){if(!window.open(r,&#39;douban&#39;,&#39;toolbar=0,resizable=1,scrollbars=yes,status=1,width=450,height=330&#39;))location.href=r+&#39;&amp;r=1&#39;};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()" data-name="douban"><img src="http://baijii-common.b0.upaiyun.com/social_icons/32x32/douban.png">分享到豆瓣</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<div id="share-weixin-modal" class="modal hide fade share-weixin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    </div>
+    <div class="modal-body">
+        <h5>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</h5>
+    </div>
+</div>
+
+
+<div id="notebooks-menu" class="panel notebooks-menu arrow-top modal hide fade"><img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></div>
+<div id="collection-menu" class="panel collection-menu arrow-top modal hide fade"><img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" /></div>
+
+<div id="likes-modal" class="modal modal_new support_list-modal fullscreen hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3>喜欢的用户</h3>
+            </div>
+            <div class="modal-body">
+                <ul class="unstyled users">
+                    <img class="loader-tiny editor-loading" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" />
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Comments -->
+<div id="comments" class="comment-list clearfix">
+    <div class="comment-head clearfix">
+        45条评论
+          <span class="order">
+            （
+            <a data-order="asc" class="active" href="javascript:void(0)">按时间正序</a>·
+            <a data-order="desc" href="javascript:void(0)">按时间倒序</a>·
+            <a data-order="likes_count" href="javascript:void(0)">按喜欢排序</a>
+            ）
+          </span>
+        <a class="goto-comment pull-right" data-signin-link="true" data-toggle="modal" href="/sign_in">
+            <i class="fa fa-pencil"></i>添加新评论
+        </a>        </div>
+    <div id="comment-list">
+        <img class="loader-tiny" src="http://baijii-common.b0.upaiyun.com/loaders/tiny.gif" alt="Tiny" />
+    </div>
+    <p class="signout-comment">
+        <a class="btn btn-info" data-signin-link="true" data-toggle="modal" href="/sign_in">
+            登录后发表评论
+        </a>  </p>
+
+</div>
+<!-- -->
+
+</div>
+
+<script type='application/json' data-name='note'>
+    {"id":154777,"abbr":" 摘要：这是一篇很详尽的独立博客搭建教程，里面介绍了域名注册、DNS设置、github和Hexo设置等过程，这是我写得最长的一篇教程。我想将我搭建独立博客的过程在一篇文章中尽可能详细地写出来，希望能给后来者一个明确的指引，同时用这篇教程开篇，正式开始我的第八大洲之旅。 \n 前言 \n 作为一个技...","slug":"05289a4bc8b2","url":"http://www.jianshu.com/p/05289a4bc8b2","image_url":"http://cwb.assets.jianshu.io/notes/images/154777/weibo/image_63b6332a671f.jpeg","wordage":5190,"has_further_readings":false,"views_count":30700,"likes_count":233,"comments_count":45,"rewards_total_count":0}
+</script>
+
+<script type='application/json' data-name='author'>
+    {"id":32598,"nickname":"CnFeat","slug":"c30afb47d730","public_notes_count":325,"followers_count":2050,"total_likes_count":9204,"is_current_user":false}
+</script>
+
+
+<div class="include-collection">
+    <div class="content">
+        <h5>被以下专题收入，发现更多相似内容：</h5>
+        <ul id="all-collections" class="unstyled collections-list">
+            <li>
+                <a class="avatar" href="/collection/f16b3d483ec2"><img src="http://upload.jianshu.io/collections/images/362/%E5%B9%B2-order.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                    <a href="/collection/f16b3d483ec2">干货</a>
+                </h5>
+
+                <div class="btn btn-success follow">
+                    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+                    <span>13.8K</span>
+                </div>
+
+                <p class="description">欢迎投稿 将实用的知识共享</p>
+                <p>
+                    <a class="blue-link" href="/collection/f16b3d483ec2">2296篇文章</a> · 13848人关注
+                </p>
+            </div>
+            </li>
+            <li>
+                <a class="avatar" href="/collection/e2a2a0073e2d"><img src="http://upload.jianshu.io/collections/images/148/github-logo1.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                    <a href="/collection/e2a2a0073e2d">GitHub上有趣的资源</a>
+                </h5>
+
+                <div class="btn btn-success follow">
+                    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+                    <span>10.0K</span>
+                </div>
+
+                <p class="description">主题是Github上有趣的资源。
+
+                    当然写Github周边也可以～
+
+                    另：本专题招募编辑，有兴趣的朋友请简信给我</p>
+                <p>
+                    <a class="blue-link" href="/collection/e2a2a0073e2d">129篇文章</a> · 10011人关注
+                </p>
+            </div>
+            </li>
+            <li>
+                <a class="avatar" href="/collection/bd97f28042fd"><img src="http://upload.jianshu.io/collections/images/838/%E4%B8%8B%E8%BD%BD.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/180" alt="180" /></a>              <div class="collections-info">
+                <h5>
+                    <a href="/collection/bd97f28042fd">互联网的世界</a>
+                </h5>
+
+                <div class="btn btn-success follow">
+                    <a data-signin-link="true" data-toggle="modal" href="/sign_in"><i class="fa fa-fw fa-plus"></i>  <span>添加关注</span></a>
+                    <span>6.6K</span>
+                </div>
+
+                <p class="description">搞硬件的被软件的搞死的，搞软件被搞互联网搞死的，搞互联网的呢？目前还没有被搞死，赶紧赶上这个浪潮吧。</p>
+                <p>
+                    <a class="blue-link" href="/collection/bd97f28042fd">614篇文章</a> · 6673人关注
+                </p>
+            </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Modal -->
+</div>
+
+</div>
+
+<div id="view-mode-modal" tabindex="-1" class="modal hide read-modal" aria-hidden="false" data-js-module='view-mode-modal'>
+    <div class="btn-group change-background" data-toggle="buttons-radio">
+        <a class="btn btn-daytime active" data-mode="day" href="javascript:void(null);">
+            <i class="fa fa-sun-o"></i>
+        </a>      <a class="btn btn-nighttime " data-mode="night" href="javascript:void(null);">
+        <i class="fa fa-moon-o"></i>
+    </a>    </div>
+    <div class="btn-group change-font" data-toggle="buttons-radio">
+        <a class="btn font " data-font="font1" href="javascript:void(null);">宋体</a>
+        <a class="btn font hei active" data-font="font2" href="javascript:void(null);">黑体</a>
+    </div>
+    <div class="btn-group change-locale" data-toggle="buttons-radio">
+        <a class="btn font active" data-locale="zh-CN" href="javascript:void(null);">简</a>
+        <a class="btn font hei " data-locale="zh-TW" href="javascript:void(null);">繁</a>
+    </div>
+</div>
+
+
+
+<script src="http://static.jianshu.io/assets/base-aa34eadf9652fb6319481fa0da275eeb.js"></script>
+
+<script src="http://static.jianshu.io/assets/reading-base-2e21cd09dcbe813d1e492b4ad5a5f9d9.js"></script>
+<script src="http://static.jianshu.io/assets/reading/module_sets/note_show-cfa972fd1463c7a6b42aa768c598137b.js"></script>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35169517-1']);
+    _gaq.push(['_setCustomVar', 2, 'User Type', 'Visitor', 1 ]);
+    _gaq.push(['_trackPageview']);
+
+
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<div style="display:none">
+    <script src="http://s95.cnzz.com/z_stat.php?id=1253183112&web_id=1253183112" language="JavaScript"></script>
+</div>
+</body>
+</html>
